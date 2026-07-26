@@ -1,0 +1,834 @@
+/* Reset Asas CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Efek scroll halus saat navigasi diklik */
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ================= NAVBAR / HEADER ================= */
+.navbar-container {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-section:hover {
+    transform: scale(1.03);
+}
+
+/* Bulatan Logo */
+.logo-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #ffffff; /* Warna dasar kalau gambar gagal dimuat */
+    border-radius: 50%;
+    overflow: hidden; /* Berfungsi agar gambar yang keluar dari bulatan akan terpotong rapi */
+    background-size: contain; /* Memastikan gambar menutupi seluruh bulatan tanpa gepeng */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mengatur gambar di dalam bulatan */
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar memenuhi bulatan dengan proporsional tanpa gepeng */
+}
+
+.logo-text {
+    color: #060238; /* Warna teks logo berubah menjadi biru dongker/navy gelap */
+    font-size: 1.2rem;
+    font-weight: 800; /* Font ditebalkan sesuai desain */
+}
+
+/* Menu Navigasi (Background kapsul dihapus) */
+.nav-menu {
+    display: flex;
+    gap: 35px; /* Jarak antar teks menu */
+    align-items: center;
+}
+
+.nav-link {
+    color: #060238; /* Warna teks menu menjadi biru dongker/navy gelap */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700; /* Font menu ditebalkan */
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #848484; /* Warna sedikit memudar saat kursor diarahkan */
+    transform: translateY(-2px);
+}
+
+/* ================= 1. HOME / HERO SECTION ================= */
+/* (Bagian hero-section, profile-avatar, hero-title, hero-subtitle biarkan sama seperti sebelumnya) */
+
+/* ... (Kode hero lainnya tetap sama) ... */
+
+/* Tombol More (Berubah Warna) */
+.btn-more {
+    background-color: #060238; /* Latar belakang tombol menjadi biru dongker/navy */
+    color: #ffffff;            /* Teks tombol menjadi putih */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 12px 55px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-more:hover {
+    background-color: #171257; /* Warna tombol sedikit lebih terang saat di-hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(6, 2, 56, 0.2); /* Tambahan bayangan lembut */
+}
+
+/* ================= 1. HOME / HERO SECTION ================= */
+.hero-section {
+    /* 1. Masukkan nama file gambar kamu di sini */
+    background-image: url('poto/theme_water___sky_bulr_sky_blue__background__by_bankkokok_dm69e1v.png'); 
+    
+    /* 2. Ini yang bikin gambar responsif di HP! */
+    background-size: cover; /* Memastikan gambar menutupi seluruh layar tanpa gepeng */
+    background-repeat: no-repeat; /* Mencegah gambar berulang seperti ubin */
+
+    /* Kode bawaan untuk mengatur posisi isi (biarkan seperti ini) */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bulatan Foto Profil di Hero Section */
+.profile-avatar {
+    width: 160px; /* Ukuran diameter bulatan (bisa disesuaikan) */
+    height: 160px;
+    background-color: #ffffff; /* Warna latar belakang jika foto belum ada */
+    border-radius: 50%; /* Membuat kotak jadi lingkaran sempurna */
+    border: 4px solid #acd6fd; /* Garis pinggir bulatan (warna biru dongker/navy) */
+    overflow: hidden; /* Memotong foto secara melingkar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* Mengatur Foto di Dalam Bulatan */
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Agar foto profil tetap proporsional dan tidak terdistorsi/gepeng */
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.btn-more {
+    background-color: #060238;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 10px 50px;
+    border-radius: 25px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-more:hover {
+    background-color: #171257;
+    transform: translateY(-3px);
+}
+
+/* ================= 2. PROFIL / ABOUT SECTION ================= */
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #ffffff;
+}
+
+.about-container {
+    max-width: 900px;
+}
+
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #111111;
+    margin-bottom: 30px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+/* Ikon Sosial Media (Clickable) */
+.social-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    color: #000000;
+    font-size: 2.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    transform: translateY(-4px);
+    opacity: 0.7;
+}
+
+/* Butang Resume */
+.btn-resume {
+    background-color: #060238; /* Warna abu-abu tombol resume */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 10px 45px;
+    border-radius: 25px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-resume:hover {
+    background-color: #171257;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ================= RESPONSIF (MOBIL / TABLET) ================= */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px 20px;
+    }
+
+    .hero-title, .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about-section {
+        padding: 20px 20px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1.8rem;
+    }
+}
+/* ================= 3. EXPERIENCES SECTION (TANPA GARIS) ================= */
+.experience-section {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.exp-main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.exp-container {
+    max-width: 900px;
+    width: 100%;
+    padding-left: 0; /* Padding dihapus karena garis sudah tidak ada */
+}
+
+.exp-group {
+    margin-bottom: 40px;
+}
+
+/* Label Pill Gelap (Education & Organization) */
+.exp-category-pill {
+    display: inline-block;
+    background-color: #060238;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout Pengalaman (2 Kolom) */
+/* Grid Layout Pengalaman */
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px; /* Jarak antar kotak */
+    padding-left: 0;
+}
+
+/* Tampilan Kotak/Card tiap Pengalaman */
+.exp-item {
+    background-color: #e9e7e7;       /* Warna latar belakang kotak (kelabu sangat lembut) */
+    border: 1px solid #e0e0e0;         /* Garis pinggir halus */
+    border-radius: 16px;               /* Lengkungan sudut kotak */
+    padding: 24px;                     /* Jarak isi teks di dalam kotak */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;          /* Efek transisi halus saat kursor mengarah ke kotak */
+}
+
+/* Efek saat kursor diarahin ke kotak (Hover) */
+.exp-item:hover {
+    transform: translateY(-4px);                       /* Kotak sedikit naik ke atas */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);      /* Bayangan lembut di bawah kotak */
+    border-color: #060238;                             /* Warna border menggelap sedikit */
+}
+
+/* Badge Tahun di dalam Kotak */
+.exp-year-badge {
+    background-color: #060238;
+    color: #060238;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.exp-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.3;
+    margin-bottom: 6px;
+}
+
+.exp-subtitle {
+    font-size: 0.95rem;
+    color: #555555;
+    font-weight: 400;
+}
+
+/* Badge Tahun Kelabu */
+.exp-year-badge {
+    background-color: #060238;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.exp-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.25;
+    margin-bottom: 4px;
+}
+
+.exp-subtitle {
+    font-size: 1rem;
+    color: #333333;
+    font-weight: 400;
+}
+
+/* Responsif Layar HP */
+@media (max-width: 768px) {
+    .exp-main-title {
+        font-size: 2.8rem;
+        margin-bottom: 30px;
+    }
+
+    .exp-grid {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+}
+
+/* ================= 4. SKILLS SECTION ================= */
+.skills-section {
+    min-height: 100vh;
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.skills-main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    text-align: center;
+    color: #000000;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Tampilan Kotak Skill (Siku Tajam Sesuai Desain) */
+.skill-card {
+    background-color: #e9e7e7;       /* Warna latar belakang kotak (kelabu sangat lembut) */
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 25px;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);                       /* Kotak sedikit naik ke atas */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);      /* Bayangan lembut di bawah kotak */
+    border-color: #060238;                             /* Warna border menggelap sedikit */
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Ukuran Ikon Logo */
+.skill-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.skill-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #060238;
+}
+
+/* Garis Pemisah Putih */
+.skill-line {
+    width: 100%;
+    height: 1px;
+    background-color: #060238;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.skill-desc {
+    font-size: 0.95rem;
+    color: #060238;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Responsif Layar HP */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* Berubah jadi 1 kolom ke bawah */
+        gap: 25px;
+    }
+
+    .skills-main-title {
+        font-size: 2.8rem;
+    }
+}
+/* ================= 5. PROJECT SECTION ================= */
+.project-section {
+    min-height: 100vh;
+    padding: 60px 20px 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.project-main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Tampilan Kotak Project */
+.project-card {
+    background-color: #e9e7e7; /* Warna abu-abu sesuai desain */
+    
+    width: 250px;
+    height: 180px;
+    border-radius: 25px; /* Sudut melengkung */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    color: #000000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);                       /* Kotak sedikit naik ke atas */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);      /* Bayangan lembut di bawah kotak */
+    border: 1px solid #060238; /* Garis pinggir halus */
+}
+
+/* Ukuran Ikon */
+.project-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+/* Teks Nama Project */
+.project-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Responsif Layar HP (Skrin Kecil) */
+@media (max-width: 768px) {
+    .project-main-title {
+        font-size: 2.8rem;
+    }
+    
+    .project-card {
+        width: 150px;
+        height: 140px;
+    }
+
+    .project-icon {
+        font-size: 2.5rem;
+    }
+
+    .project-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* ================= 6. MODAL / POP-UP ================= */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 250, 250, 0.85); 
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1.5px solid #000000;
+    width: 90%;
+    max-width: 600px;
+    padding: 50px 40px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol Tutup (Silang/X) Kiri Atas */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #060238; 
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+    transform: scale(1.1);
+}
+
+/* Panah Navigasi Kiri Kanan */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #060238; 
+    font-size: 4rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-arrow:hover {
+    transform: translateY(-50%) scale(1.2); 
+}
+
+.left-arrow { left: 20px; }
+.right-arrow { right: 20px; }
+
+/* Kotak Gambar Placeholder */
+.modal-image-box {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: #d9d9d9; 
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-title {
+    font-size: 2.2rem;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.modal-desc {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+/* Footer Modal (Role dan Bulatan) */
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.modal-role {
+    background-color: #060238; 
+    color: #ffffff;
+    padding: 6px 30px;
+    font-size: 0.9rem;
+    border-radius: 4px; 
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.modal-dot {
+    color: #060238; 
+    font-size: 1.5rem;
+}
+
+/* ================= RESPONSIF LAYAR HP ================= */
+@media (max-width: 768px) {
+    /* Responsif Bagian Project */
+    .project-main-title {
+        font-size: 2.8rem;
+    }
+    .project-card {
+        width: 150px;
+        height: 140px;
+    }
+    .project-icon {
+        font-size: 2.5rem;
+    }
+    .project-name {
+        font-size: 1.1rem;
+    }
+
+    /* Responsif Bagian Modal */
+    .modal-content {
+        padding: 40px 20px;
+    }
+    .modal-image-box {
+        width: 180px;
+        height: 180px;
+    }
+    .nav-arrow {
+        font-size: 2.5rem;
+    }
+    .modal-title {
+        font-size: 1.8rem;
+    }
+}
+/* ================= 7. FOOTER ================= */
+.footer-section {
+    background-color: #100e30; /* Biru dongker gelap */
+    color: #ffffff;
+    padding: 80px 20px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Judul Let's Collaborate */
+.footer-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+/* Navigasi Link (Home | Profil | dll) */
+.footer-links {
+    display: flex;
+    gap: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Agar teks rapi ke bawah jika layar HP kecil */
+    justify-content: center;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 0.7; /* Sedikit memudar saat di-hover */
+}
+
+.divider {
+    color: #ffffff;
+}
+
+/* Ikon Sosial Media (Email, IG, WA, LinkedIn) */
+.footer-socials {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-socials a {
+    color: #ffffff; /* Ikon warna hitam sesuai desainmu */
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-5px); /* Efek ikon melompat kecil saat di-hover */
+}
+
+/* Garis Putih */
+.footer-line {
+    width: 100%;
+    max-width: 500px;
+    border: none;
+    border-top: 1px solid #ffffff;
+    margin-bottom: 25px;
+}
+
+/* Teks Copyright */
+.footer-copyright {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* ================= RESPONSIF LAYAR HP ================= */
+@media (max-width: 768px) {
+    .footer-title {
+        font-size: 3rem;
+    }
+    .footer-links {
+        font-size: 1.1rem;
+        gap: 12px;
+    }
+    .footer-socials a {
+        font-size: 2rem;
+    }
+    .footer-copyright {
+        font-size: 1rem;
+    }
+}
