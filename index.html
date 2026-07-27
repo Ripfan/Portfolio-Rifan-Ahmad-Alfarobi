@@ -20,6 +20,8 @@
             <span class="logo-text">Ripan</span>
         </a>
 
+        <i class="fa-solid fa-bars hamburger-icon" onclick="toggleMenu()"></i>
+
         <nav class="nav-menu">
             <a href="#" class="nav-link">Home</a>
             <a href="#profil" class="nav-link">Profil</a>
@@ -278,6 +280,10 @@
 
             // Aktifkan baris di bawah ini jika gambar sudah disiapkan di folder kamu:
             document.getElementById('modalImg').src = data.img;
+        }
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
         }
     </script>
     <footer class="footer-section">

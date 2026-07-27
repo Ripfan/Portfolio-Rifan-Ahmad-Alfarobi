@@ -88,6 +88,12 @@ body {
     color: #848484; /* Warna sedikit memudar saat kursor diarahkan */
     transform: translateY(-2px);
 }
+.hamburger-icon {
+    display: none; /* Sembunyikan ikon di layar besar (laptop) */
+    font-size: 2rem;
+    color: #060238; /* Sesuaikan warna jika perlu */
+    cursor: pointer;
+}
 
 /* ================= 1. HOME / HERO SECTION ================= */
 /* (Bagian hero-section, profile-avatar, hero-title, hero-subtitle biarkan sama seperti sebelumnya) */
@@ -576,6 +582,31 @@ body {
 
 /* Responsif Layar HP (Skrin Kecil) */
 @media (max-width: 768px) {
+    .hamburger-icon {
+        display: block; 
+    }
+
+    /* 2. Sembunyikan Menu Default dan Ubah Menjadi Dropdown */
+    .nav-links {
+        display: none; /* Sembunyikan menu bawaan */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Jarak dari atas (sesuaikan dengan tinggi headermu) */
+        right: 20px;
+        background-color: #ffffff;
+        width: 200px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Beri bayangan agar melayang */
+        text-align: center;
+        gap: 15px;
+        z-index: 999;
+    }
+
+    /* 3. Class tambahan saat tombol diklik (Menu Aktif) */
+    .nav-links.active {
+        display: flex; /* Menu muncul berjajar ke bawah */
+    }
     .project-main-title {
         font-size: 2.8rem;
     }
