@@ -972,3 +972,14 @@ body {
         font-size: 1.1rem;
     }
 }
+/* FIX MENU HP SAAT DI-SCROLL: Paksa warna teks menu di dropdown HP tetap biru/gelap */
+@media (max-width: 768px) {
+    .navbar.scrolled #navMenu .nav-link,
+    #navMenu .nav-link {
+        color: #060238 !important; /* Warna teks tetap biru tua di dalam kotak putih dropdown */
+    }
+
+    #navMenu .nav-link:hover {
+        color: #848484 !important; /* Efek hover saat disentuh/diklik */
+    }
+}
