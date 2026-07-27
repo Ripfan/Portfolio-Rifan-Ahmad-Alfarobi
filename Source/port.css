@@ -974,8 +974,9 @@ body {
 }
 /* FIX MENU HP SAAT DI-SCROLL: Paksa warna teks menu di dropdown HP tetap biru/gelap */
 @media (max-width: 768px) {
-    .navbar.scrolled #navMenu .nav-link,
-    #navMenu .nav-link {
+    .navbar.scrolled .nav-link,
+    .navbar.scrolled .logo-text,
+    .navbar.scrolled .hamburger-icon {
         color: #060238 !important; /* Warna teks tetap biru tua di dalam kotak putih dropdown */
     }
 
