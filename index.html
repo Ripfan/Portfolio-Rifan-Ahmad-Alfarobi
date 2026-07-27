@@ -215,6 +215,17 @@
     </div>
 
     <script>
+        // Deteksi Scroll untuk Mengubah Warna Navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            
+            // Jika posisi scroll lebih dari 80px (keluar dari hero puncak)
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled'); // Pasang background biru
+            } else {
+                navbar.classList.remove('scrolled'); // Balik transparan
+            }
+        });
         // DATA SETIAP KATEGORI (Silakan isi/tambah karya di masing-masing kategori)
         const categoriesData = {
             logo: [
@@ -255,31 +266,72 @@
             document.getElementById('projectModal').style.display = 'none';
         }
 
-        // Navigasi Panah Kanan (Next)
+       // Fungsi untuk animasi Slide saat ganti gambar
+        function triggerAnimation(direction) {
+            const imgEl = document.getElementById('modalImg');
+            
+            // Hapus class animasi lama
+            imgEl.classList.remove('slide-next-anim', 'slide-prev-anim');
+            
+            // Trik rahasia: Paksa browser mereset animasi (Reflow)
+            void imgEl.offsetWidth; 
+            
+            // Tambahkan animasi sesuai arah klik
+            if (direction === 'next') {
+                imgEl.classList.add('slide-next-anim');
+            } else {
+                imgEl.classList.add('slide-prev-anim');
+            }
+        }
+
+        // Fungsi Panah Kanan
         function nextProject() {
-            const list = categoriesData[currentCategory];
-            currentIndex = (currentIndex + 1) % list.length;
-            updateModalContent();
+            currentIndex++;
+            if (currentIndex >= categoriesData[currentCategory].length) {
+                currentIndex = 0; // Balik ke awal
+            }
+            updateModalContent('next'); // Kasih tahu kalau ini geser ke kanan
         }
 
-        // Navigasi Panah Kiri (Prev)
+        // Fungsi Panah Kiri
         function prevProject() {
-            const list = categoriesData[currentCategory];
-            currentIndex = (currentIndex - 1 + list.length) % list.length;
-            updateModalContent();
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = categoriesData[currentCategory].length - 1; // Balik ke akhir
+            }
+            updateModalContent('prev'); // Kasih tahu kalau ini geser ke kiri
         }
 
-        // Update Tampilan Modal
-        function updateModalContent() {
-            const list = categoriesData[currentCategory];
-            const data = list[currentIndex];
+        // Update isi Modal & Handle Animasi Loading
+        function updateModalContent(direction = 'next') {
+            const data = categoriesData[currentCategory][currentIndex];
+            
+            // 1. Update Teks Judul & Deskripsi
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalDesc').textContent = data.desc;
+            
+            // 2. === BAGIAN ANIMASI & LOADING GAMBAR ===
+            const imgEl = document.getElementById('modalImg');
+            
+            // Hapus animasi lama & sembunyikan gambar sejenak biar efek Loading Shimmer kelihatan
+            imgEl.classList.remove('slide-next-anim', 'slide-prev-anim');
+            imgEl.style.opacity = '0'; 
+            
+            // Mulai mendownload gambar baru
+            imgEl.src = data.img;
 
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalDesc').innerText = data.desc;
-            document.getElementById('modalRole').innerText = data.role;
-
-            // Aktifkan baris di bawah ini jika gambar sudah disiapkan di folder kamu:
-            document.getElementById('modalImg').src = data.img;
+            // 3. TUNGGU sampai gambar benar-benar selesai dimuat
+            imgEl.onload = function() {
+                // Trik rahasia memaksa browser mereset animasi
+                void imgEl.offsetWidth; 
+                
+                // Setelah gambar siap, baru jalankan animasi slide-nya!
+                if (direction === 'next') {
+                    imgEl.classList.add('slide-next-anim');
+                } else {
+                    imgEl.classList.add('slide-prev-anim');
+                }
+            };
         }
         function toggleMenu() {
             const menu = document.getElementById('navMenu');

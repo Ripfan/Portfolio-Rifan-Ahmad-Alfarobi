@@ -16,17 +16,35 @@ body {
 }
 
 /* ================= NAVBAR / HEADER ================= */
+/* Navbar Default (Transparan di paling atas) */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    background-color: transparent;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 20px 20px;
     padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
+    z-index: 9999;
+    /* Transisi mulus saat berubah warna */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease; 
+}
+
+/* WARNA BIRU (Aktif saat di-scroll ke bawah) */
+.navbar.scrolled {
+    background-color: #060238; /* Warna biru tua sesuai tema web kamu */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Supaya teks & ikon di navbar berubah jadi putih pas background-nya biru */
+.navbar.scrolled .nav-link,
+.navbar.scrolled .logo-text,
+.navbar.scrolled .hamburger-icon {
+    color: #ffffff !important;
 }
 
 .logo-section {
@@ -84,7 +102,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #848484; /* Warna sedikit memudar saat kursor diarahkan */
+    color: #7075af; /* Warna sedikit memudar saat kursor diarahkan */
     transform: translateY(-2px);
 }
 .hamburger-icon {
@@ -820,6 +838,80 @@ body {
 .footer-copyright {
     font-size: 1.2rem;
     font-weight: 700;
+}
+
+/* ================= EFEK LOADING SHIMMER PROJECT ================= */
+
+/* 1. Bikin kotaknya punya efek animasi cahaya jalan-jalan */
+.project-card {
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmerEffect 5s infinite linear;
+    overflow: hidden; /* Biar gambarnya nggak keluar dari kotak */
+    position: relative;
+}
+
+/* Kunci pergerakan cahayanya */
+@keyframes shimmerEffect {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* 2. Bikin gambar yang baru muncul efeknya halus (Fade-in) */
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Sembunyikan dulu sesaat */
+    animation: fadeInImage 0.8s ease-in-out forwards;
+}
+
+/* Kunci efek gambar muncul (fade-in) */
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* ================= EFEK SLIDE GAMBAR PROJECT ================= */
+@keyframes slideNextRender {
+    0% {
+        transform: translateX(60px) scale(0.92); /* Masuk dari kanan & agak kecil */
+        opacity: 0;
+        filter: blur(8px);                       /* Efek belum fokus/render */
+    }
+    60% {
+        filter: blur(2px);                       /* Mulai memfokus */
+    }
+    100% {
+        transform: translateX(0) scale(1);      /* Ukuran normal */
+        opacity: 1;
+        filter: blur(0);                         /* Gambar tajam & sempurna */
+    }
+}
+
+/* 2. Animasi Slide ke Kanan + Efek Render Focus */
+@keyframes slidePrevRender {
+    0% {
+        transform: translateX(-60px) scale(0.92); /* Masuk dari kiri & agak kecil */
+        opacity: 0;
+        filter: blur(8px);                        /* Efek belum fokus/render */
+    }
+    60% {
+        filter: blur(2px);                        /* Mulai memfokus */
+    }
+    100% {
+        transform: translateX(0) scale(1);       /* Ukuran normal */
+        opacity: 1;
+        filter: blur(0);                          /* Gambar tajam & sempurna */
+    }
+}
+
+/* Class yang dipanggil oleh JavaScript saat panah diklik */
+.slide-next-anim {
+    animation: slideNextRender 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.slide-prev-anim {
+    animation: slidePrevRender 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 /* ================= RESPONSIF LAYAR HP ================= */
