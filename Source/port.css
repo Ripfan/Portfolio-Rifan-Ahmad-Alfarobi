@@ -89,9 +89,9 @@ body {
     transform: translateY(-2px);
 }
 .hamburger-icon {
-    display: none; /* Sembunyikan ikon di layar besar (laptop) */
+    display: none; /* Wajib disembunyikan di layar laptop */
     font-size: 2rem;
-    color: #060238; /* Sesuaikan warna jika perlu */
+    color: #060238;
     cursor: pointer;
 }
 
@@ -820,27 +820,27 @@ body {
 }
 /* Responsif Layar HP (Skrin Kecil) */
 @media (max-width: 768px) {
-    /* Munculkan Ikon Garis Tiga */
+    /* 1. Munculkan Ikon Garis Tiga di Kanan Atas */
     .hamburger-icon {
-        display: block; 
+        display: block !important;
     }
 
-    /* Sembunyikan dan Ubah Bentuk Menu */
+    /* 2. Sembunyikan Menu dan Jadikan Dropdown */
     .nav-links {
-        display: none !important; /* Wajib Sembunyi */
+        display: none !important; /* Paksa sembunyi saat pertama buka web */
         flex-direction: column;
         position: absolute;
-        top: 80px; /* Jarak dropdown dari atas */
+        top: 70px; /* Jarak menu dari header */
         right: 20px;
         background-color: #ffffff;
         width: 200px;
         padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Efek bayangan / melayang */
         text-align: center;
     }
 
-    /* Munculkan Menu Saat Tombol Diklik */
+    /* 3. Munculkan Menu Berjejer ke Bawah Saat Garis Tiga Diklik */
     .nav-links.active {
         display: flex !important; 
     }
