@@ -581,8 +581,8 @@ body {
     }
     
     .project-card {
-        width: 150px;
-        height: 140px;
+        width: 200px;
+        height: 150px;
     }
 
     .project-icon {
@@ -715,8 +715,8 @@ body {
         font-size: 2.8rem;
     }
     .project-card {
-        width: 150px;
-        height: 140px;
+        width: 200px;
+        height: 150px;
     }
     .project-icon {
         font-size: 2.5rem;
