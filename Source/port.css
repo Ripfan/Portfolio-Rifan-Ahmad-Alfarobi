@@ -826,7 +826,7 @@ body {
     }
 
     /* 2. Sembunyikan Menu dan Jadikan Dropdown */
-    .nav-links {
+    #navMenu {
         display: none !important; /* Paksa sembunyi saat pertama buka web */
         flex-direction: column;
         position: absolute;
@@ -841,12 +841,8 @@ body {
     }
 
     /* 3. Munculkan Menu Berjejer ke Bawah Saat Garis Tiga Diklik */
-    .nav-links.active {
+    #navMenu.active {
         display: flex !important; 
-    }
-    /* 3. Class tambahan saat tombol diklik (Menu Aktif) */
-    .nav-links.active {
-        display: flex !important; /* Menu muncul berjajar ke bawah */
     }
     .project-main-title {
         font-size: 2.8rem;
