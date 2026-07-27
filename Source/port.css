@@ -17,13 +17,12 @@ body {
 
 /* ================= NAVBAR / HEADER ================= */
 .navbar {
-    background-color: #ffffff;
     width: 100%;
     padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
