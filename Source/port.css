@@ -820,27 +820,30 @@ body {
 }
 /* Responsif Layar HP (Skrin Kecil) */
 @media (max-width: 768px) {
+    /* Munculkan Ikon Garis Tiga */
     .hamburger-icon {
         display: block; 
     }
 
-    /* 2. Sembunyikan Menu Default dan Ubah Menjadi Dropdown */
+    /* Sembunyikan dan Ubah Bentuk Menu */
     .nav-links {
-        display: none !important; /* Sembunyikan menu bawaan */
+        display: none !important; /* Wajib Sembunyi */
         flex-direction: column;
         position: absolute;
-        top: 80px; /* Jarak dari atas (sesuaikan dengan tinggi headermu) */
+        top: 80px; /* Jarak dropdown dari atas */
         right: 20px;
         background-color: #ffffff;
         width: 200px;
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Beri bayangan agar melayang */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         text-align: center;
-        gap: 15px;
-        z-index: 999;
     }
 
+    /* Munculkan Menu Saat Tombol Diklik */
+    .nav-links.active {
+        display: flex !important; 
+    }
     /* 3. Class tambahan saat tombol diklik (Menu Aktif) */
     .nav-links.active {
         display: flex !important; /* Menu muncul berjajar ke bawah */
