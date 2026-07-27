@@ -69,7 +69,7 @@ body {
 }
 
 /* Menu Navigasi (Background kapsul dihapus) */
-.nav-menu {
+#navMenu {
     display: flex;
     gap: 35px; /* Jarak antar teks menu */
     align-items: center;
