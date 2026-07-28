@@ -977,10 +977,10 @@ body {
     .navbar.scrolled .nav-link,
     .navbar.scrolled .logo-text,
     .navbar.scrolled .hamburger-icon {
-        color: #060238 !important; /* Warna teks tetap biru tua di dalam kotak putih dropdown */
+        color: #ffffff !important; /* Warna teks tetap biru tua di dalam kotak putih dropdown */
     }
     .navbar.scrolled #navMenu {
-        background-color: #ffffff !important; /* Warna latar belakang dropdown tetap putih */
+        background-color: #060238 !important; /* Warna latar belakang dropdown tetap putih */
     }
 
     #navMenu .nav-link:hover {
